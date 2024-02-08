@@ -1,7 +1,7 @@
 plugins {
     id("java")
     id("me.champeau.jmh") version  "0.7.2"
-
+    id("org.jetbrains.kotlin.jvm") version "1.8.22"
 }
 
 group = "org.example"
@@ -12,6 +12,8 @@ repositories {
 }
 
 dependencies {
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
+
     implementation("org.openjdk.jmh:jmh-core:1.37")
     implementation("org.openjdk.jmh:jmh-generator-annprocess:1.37")
     testAnnotationProcessor("org.openjdk.jmh:jmh-generator-annprocess:1.37")
