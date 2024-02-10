@@ -4,7 +4,9 @@ fun main() {
     val kE = KotlinExample()
 //    val plain = kE.plainReplace("012")
 //    val sb = kE.sbReplace("012")
-//    val sb = kE.charrArrayReplace("012")
+//    val sb = kE.charrArrayReplace("012htgbr")
+//    val cara = kE.charrArrayReplaceArray("012htgbr")
+
 //    println(plain)
 //    println(sb)
 //    println(plain == "abc")
@@ -15,8 +17,9 @@ fun main() {
 
     repeat(1_000_000) {
         kE.plainReplace(TEST_STRING)
-        kE.sbReplace(TEST_STRING)
-        kE.charrArrayReplace(TEST_STRING)
+//        kE.sbReplace(TEST_STRING)
+//        kE.charrArrayReplace(TEST_STRING)
+        kE.charrArrayReplaceArray(TEST_STRING)
     }
 
 

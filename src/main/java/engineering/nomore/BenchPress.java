@@ -15,7 +15,7 @@ public class BenchPress {
     @Benchmark
     @Fork(value = 1, warmups = 1)
     @Warmup(iterations = 2, time = 2500, timeUnit = TimeUnit.MILLISECONDS)
-    @Measurement(iterations = 2, time = 5000, timeUnit = TimeUnit.MILLISECONDS)
+    @Measurement(iterations = 2, time = 2500, timeUnit = TimeUnit.MILLISECONDS)
     @BenchmarkMode({Mode.Throughput, Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
 //    @BenchmarkMode({Mode.SingleShotTime})
@@ -26,21 +26,21 @@ public class BenchPress {
     @Benchmark
     @Fork(value = 1, warmups = 1)
     @Warmup(iterations = 2, time = 2500, timeUnit = TimeUnit.MILLISECONDS)
-    @Measurement(iterations = 2, time = 5000, timeUnit = TimeUnit.MILLISECONDS)
+    @Measurement(iterations = 2, time = 2500, timeUnit = TimeUnit.MILLISECONDS)
     @BenchmarkMode({Mode.Throughput, Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     public void stringBuilderReplace() {
         kotlin.sbReplace(TEST_STRING);
     }
 
-    @Benchmark
-    @Fork(value = 1, warmups = 1)
-    @Warmup(iterations = 2, time = 2500, timeUnit = TimeUnit.MILLISECONDS)
-    @Measurement(iterations = 2, time = 5000, timeUnit = TimeUnit.MILLISECONDS)
-    @BenchmarkMode({Mode.Throughput, Mode.AverageTime})
-    @OutputTimeUnit(TimeUnit.MILLISECONDS)
-    public void charArray() {
-        kotlin.charrArrayReplace(TEST_STRING);
-    }
+//    @Benchmark
+//    @Fork(value = 1, warmups = 1)
+//    @Warmup(iterations = 2, time = 2500, timeUnit = TimeUnit.MILLISECONDS)
+//    @Measurement(iterations = 2, time = 2500, timeUnit = TimeUnit.MILLISECONDS)
+//    @BenchmarkMode({Mode.Throughput, Mode.AverageTime})
+//    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+//    public void charArray() {
+//        kotlin.charrArrayReplace(TEST_STRING);
+//    }
 
 }

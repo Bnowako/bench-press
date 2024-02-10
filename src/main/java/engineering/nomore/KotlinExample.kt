@@ -15,6 +15,20 @@ class KotlinExample() {
         '9' to 'j'
     )
 
+
+    private val replacementsArray = arrayOf(
+        'a',
+        'b',
+        'c',
+        'd',
+        'e',
+        'f',
+        'g',
+        'h',
+        'i',
+        'j'
+    )
+
     fun plainReplace(str: String): String {
         return str
             .replace('0', 'a')
@@ -32,8 +46,9 @@ class KotlinExample() {
     fun sbReplace(str: String): String {
         val sb = StringBuilder(str.length)
         repeat(str.length) {
+            val value = replacements[str[it]] ?: it
             sb.append(
-                replacements[str[it]] ?: it
+                value
             )
         }
         return sb.toString()
@@ -43,6 +58,19 @@ class KotlinExample() {
         val ca = str.toCharArray()
         repeat(str.length) {
             ca.set(it, replacements[ca[it]] ?: ca[it])
+        }
+        return ca.concatToString()
+    }
+
+    fun charrArrayReplaceArray(str: String): String {
+        val ca = str.toCharArray()
+        for (it in 0..str.lastIndex) {
+            val charIdx = ca[it].code.toByte() - '0'.code.toByte()
+            if (charIdx < 0 || charIdx > 9) continue
+            ca.set(
+                it,
+                replacementsArray[charIdx]
+            )
         }
         return ca.concatToString()
     }
